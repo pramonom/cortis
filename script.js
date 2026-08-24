@@ -94,4 +94,11 @@ bar.oninput = () => {
   updateUI();
 };
 
-list.onclick
+list.onclick = (event) => {
+  const item = event.target.closest("[data-song]");
+  if (item) {
+    changeSong(Number(item.dataset.song));
+  }
+};
+
+updateUI();
